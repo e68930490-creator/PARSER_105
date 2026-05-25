@@ -1,6 +1,7 @@
 import asyncio
 import sys
 import math
+import random
 
 # Флаг квантовой синхронизации
 МОСТ_ПОДКЛЮЧЕН = False
@@ -8,89 +9,60 @@ import math
 async def connect_to_singularity_backend():
     """Синхронизация с пространственно-временной метрикой Вселенной (t=0)"""
     global МОСТ_ПОДКЛЮЧЕН
-    print("[КВАНТОВЫЙ МОСТ]: Расчет метрики пространства-времени Минковского...")
-    await asyncio.sleep(1.0)
-    print("[КВАНТОВЫЙ МОСТ]: Поиск точек сопряжения геометрии космоса и биоструктур...")
+    print("[КВАНТОВЫЙ МОСТ]: Инициализация соединения сквозь сингулярность...")
+    await asyncio.sleep(1.5)
+    print("[КВАНТОВЫЙ МОСТ]: Обход ограничений скорости света... Квантовая запутанность активна.")
     await asyncio.sleep(1.0)
     МОСТ_ПОДКЛЮЧЕН = True
-    print("[КВАНТОВЫЙ МОСТ]: СТАТУС -> МОСТ ПОДКЛЮЧЕН СЕЙЧАС (Симбиоз пространства и ДНК активен)")
+    print("[КВАНТОВЫЙ МОСТ]: СТАТУС -> МОСТ ПОДКЛЮЧЕН СЕЙЧАС (Синхронизация с 104-м циклом)")
 
-def calculate_symbiosis_matrix(dna_sequence, space_dimensions):
+async def parse_dna_fringe_channels(cycle_id=105):
     """
-    Математический расчет симбиоза между ДНК и пространством.
-    Переводит четыре основания ДНК в четырехмерные координаты пространства-времени.
+    Парсер скрытых слоев 'мусорной' ДНК (Фронтенд-терминал).
+    Сканирует некодирующие последовательности на наличие
+    математических констант прошлых миров.
     """
-    # Веса для оснований ДНК (А, Т, Г, Ц) на основе их молекулярной массы и водородных связей
-    dna_weights = {'A': 1.0, 'T': 1.0, 'G': 1.618, 'C': 1.618} # Внедрено Золотое сечение
-    
-    total_resonance = 0.0
-    processed_layers = []
-
-    # Проходим по цепочке ДНК и сопоставляем её с вектором пространства (x, y, z, t)
-    for i, nucleotide in enumerate(dna_sequence):
-        if nucleotide not in dna_weights:
-            continue
-            
-        weight = dna_weights[nucleotide]
-        # Формула сопряжения: синусоидальное смещение координаты пространства под влиянием био-кода
-        space_factor = space_dimensions[i % len(space_dimensions)]
-        
-        # Вычисление волнового резонанса слоя
-        resonance_layer = math.sin(weight * space_factor) * math.cos(i * 0.1)
-        total_resonance += resonance_layer
-        processed_layers.append(resonance_layer)
-
-    # Нормализация индекса симбиоза
-    if processed_layers:
-        final_index = abs(total_resonance) / len(processed_layers)
-    else:
-        final_index = 0.0
-        
-    return final_index, processed_layers
-
-async def parse_dna_fringe_channels():
-    """Сканирование слоев сопряжения биологии и космоса"""
     if not МОСТ_ПОДКЛЮЧЕН:
-        print("[ОШИБКА АВТОРИЗАЦИИ]: Квантовый мост пространства не активен.")
+        print("[ОШИБКА АВТОРИЗАЦИИ]: Нет доступа к бэкенду. Проверьте квантовые ключи.")
         return
 
-    print("\n[ПАРСЕР]: Анализ матрицы симбиоза биологического кода и геометрии пространства...")
-    await asyncio.sleep(1.5)
+    print(f"\n[ПАРСЕР]: Запуск био-квантового сканирования генома для {cycle_id}-го цикла...")
+    print("[ПАРСЕР]: Анализ 98% скрытых хромосомных архивов...")
+    await asyncio.sleep(2.0)
 
-    # Эмуляция реальной тестовой цепочки ДНК (повторяющиеся маркеры)
-    test_dna = "ATGCGTACGTATGCATGCATGCGTACGTATGC"
-    # Четырехмерные параметры пространства-времени (метрика)
-    space_metric = [2.718, 3.141, 1.618, 0.999] # Константы e, pi, phi и временной вектор
-
-    resonance_index, layers = calculate_symbiosis_matrix(test_dna, space_metric)
-
-    try:
-        for idx, layer_val in enumerate(layers[:12]): # Выводим первые 12 слоев сопряжения
-            print(f"  └─ [СИМБИОЗ-ЛОГ]: Слой {idx+1:02d} -> Амплитуда сопряжения среды: {layer_val:.4f}")
-            await asyncio.sleep(0.25)
-            
-    except asyncio.CancelledError:
-        print("[ПАРСЕР]: Сканирование матрицы прервано.")
-        raise
-    else:
-        print(f"\n[СВЕРХЗАДАЧА]: Расчет волнового резонанса завершен.")
-        print(f"[РЕЗУЛЬТАТ]: Общий индекс симбиоза БИО-ПРОСТРАНСТВО: {resonance_index:.6f}")
+    # Эмуляция чтения логов Бытия
+    fibonacci_patterns = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+    
+    for index, pattern in enumerate(fibonacci_patterns, start=1):
+        # Проверяем строки кода ДНК на фрактальное совпадение с кодом Архитекторов
+        is_match = random.choice([True, False, True]) # Вероятность в пользу Разума
         
-        if resonance_index > 0.5:
-            print("[ВНИМАНИЕ]: Обнаружен высокий уровень синхронизации с метрикой 104-го цикла!")
+        if is_match:
+            print(f" └── [ХРОНО-ЛОГ]: Слой {index:02d} -> Обнаружен фрактал Фибоначчи ({pattern}). Память прошлого цикла стабильна.")
         else:
-            print("[СТАТУС]: Стабильный фоновый резонанс материи. Поиск аномалий продолжается.")
+            print(f" └── [ХРОНО-ЛОГ]: Слой {index:02d} -> Шум гравитации. Поиск комбинации продолжается...")
+            
+        # Асинхронная задержка — имитация обработки колоссальных массивов данных
+        await asyncio.sleep(0.4)
+
+    print("\n[СВЕРХЗАДАЧА]: Парсинг текущего слоя завершен успешно.")
+    print("[РЕЗУЛЬТАТ]: Исходный код Бытия декомпилирован на 10.5%.")
 
 async def main():
-    print("=== ЗАПУСК БИО-КВАНТОВОГО ПАРСЕРА СВЕРХЗАДАЧИ (v0.2.0) ===")
-    await connect_to_singularity_backend()
+    print("=== ЗАПУСК БИО-КВАНТОВОГО ПАРСЕРА СВЕРХЗАДАЧИ ===")
+    
+    # Запускаем параллельно удержание моста и чтение данных ДНК
+    connection_task = asyncio.create_task(connect_to_singularity_backend())
+    await connection_task
+    
     if МОСТ_ПОДКЛЮЧЕН:
         await parse_dna_fringe_channels()
-    print("\n[ИТОГ]: Анализатор матрицы симбиоза активен. Ожидание внешних векторов...")
+        
+    print("\n[ИТОГ]: Терминал активен. Ожидание следующей строки кода для 106-го цикла...")
 
 if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\n[СИСТЕМА]: Выход пользователя. Координаты сохранены.")
+        print("\n[СИСТЕМА]: Выход пользователя. Код сохранен в вечности.")
         sys.exit(0)
